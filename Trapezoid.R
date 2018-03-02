@@ -3,8 +3,8 @@
 #equations is
 #  y= x^2
 
-x<- c(1,2,3,4,5)
-y<- c(1,4,9,16,25)
+x.test<- c(1,2,3,4,5)
+y.test<- c(1,4,9,16,25)
 
 StartToEnd<- c(1:5)
 
@@ -123,21 +123,21 @@ setMethod("initialize", "Simpson", function(.Object, ...) { #initilize method
 
 setClass(Class="input",  #Sets S4 class of door
          representation = representation(
-           x_values = "numeric", # three slots as specified in problem set
-           y_values = "numeric", 
+           x = "numeric", # three slots as specified in problem set
+           y = "numeric", 
            start_end_values = "numeric",
            test= "character"
          ),
          prototype = prototype(
-           x_values = c(), #default values are empty 
-           y_values = c(),
+           x = c(), #default values are empty 
+           y = c(),
            start_end_values = c(),
            test= c()
          )
 )
 
 setValidity("input", function(object){ 
-valuesLength= (length(object@x_values)== length(object@y_values))
+  valuesLength= (length(object@x)== length(object@y))
   
   if(!valuesLength){
     return("Simpson not valid")
@@ -145,7 +145,7 @@ valuesLength= (length(object@x_values)== length(object@y_values))
   
 })
 
-new("input", x_values= x, y_values= y,start_end_values= StartToEnd, test= "Trap")
+tester<- new("input", x= x.test, y= y.test,start_end_values= StartToEnd, test= "Trap")
 
 setMethod("initialize", "input", function(.Object, ...) { #initilize method 
   value = callNextMethod()
@@ -158,17 +158,27 @@ setMethod("initialize", "input", function(.Object, ...) { #initilize method
 ####### Making function
 
 setGeneric("integrateIt", #sets generic function in S4
-           function(x,y,Starting_Ending_Values,type) {
+           function(object= "input") {
              standardGeneric("integrateIt")
            } )
 
 setMethod("integrateIt", "input",
-          function(x,y,Starting_Ending_Values,type){
-  print("test")
-            
-          })
+          function(object){
+  
+ if(test="Trap"){ #if cardoor and chosen door are the same, randomly choose between the two remaining doors 
+    result= new("Trapezoid", x_values= object@x, y_values= object@y, estimate=
+                  trap(object@x, object@y, object@start_end_values))
+            }
+   
+} )
 
 
+
+new("Trapezoid", x_values= x, y_values= y, estimate= 33.6)
+
+tester<- new("input", x= x.test, y= y.test, start_end_values= StartToEnd, test= "Trap")
+
+integrateIt(tester)
 
 
 
