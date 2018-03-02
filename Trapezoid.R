@@ -20,11 +20,11 @@ trap<- function(x,y,StartToEnd){
   
   answer= (h/2) * sum(first_value, last_vlaue, middle_vlaues)
   
-  print(answer)
+  return(answer)
   
 }
 
-trap(x,y,StartToEnd)
+trap(x.test,y.test,StartToEnd)
 
 #################
 
@@ -46,10 +46,10 @@ simpsons <- function(x,y,StartToEnd){
   
   answer= (h/3)* sum(first_value, odd_middles, even_middles,second_to_last, last_vlaue)
   
-  print(answer)
+  return(answer)
 }
 
-simpsons(x,y,StartToEnd)
+simpsons(x.test,y.test,StartToEnd)
 
 ############# Making Classes
 
@@ -77,7 +77,7 @@ setValidity("Trapezoid", function(object){
   
   })
 
-new("Trapezoid", x_values= x, y_values= y, estimate= 33.6)
+new("Trapezoid", x_values= x.test, y_values= y.test, estimate= 33.6)
 
 setMethod("initialize", "Trapezoid", function(.Object, ...) { #initilize method 
   value = callNextMethod()
@@ -111,7 +111,7 @@ setValidity("Simpson", function(object){
   
 })
 
-new("Simpson", x_values= x, y_values= y, estimate= 33.6)
+new("Simpson", x_values= x.test, y_values= y.test, estimate= 33.6)
 
 setMethod("initialize", "Simpson", function(.Object, ...) { #initilize method 
   value = callNextMethod()
@@ -164,24 +164,42 @@ setGeneric("integrateIt", #sets generic function in S4
 
 setMethod("integrateIt", "input",
           function(object){
-  
- if(test="Trap"){ #if cardoor and chosen door are the same, randomly choose between the two remaining doors 
-    result= new("Trapezoid", x_values= object@x, y_values= object@y, estimate=
-                  trap(object@x, object@y, object@start_end_values))
+            if(object@test == "Trap"){
+              result= new("Trapezoid", x_values= object@x, y_values= object@y, estimate=
+                            trap(object@x, object@y, object@start_end_values)) 
             }
-   
-} )
+            
+            if(object@test== "Simpson"){
+              result= new("Simpson", x_values= object@x, y_values= object@y, estimate=
+                            simpsons(object@x, object@y, object@start_end_values)) 
+            }
+            
+            
+            return(result)
+          })
 
 
-
-new("Trapezoid", x_values= x, y_values= y, estimate= 33.6)
 
 tester<- new("input", x= x.test, y= y.test, start_end_values= StartToEnd, test= "Trap")
 
 integrateIt(tester)
 
+########### Print Method 
 
 
+setMethod("print", "input",
+          function(x){
+            if(x@test=="Trap"){
+              value= trap(x@x, x@y, x@start_end_values)
+            }
+            
+            if(x@test=="Simpson"){
+              value=simpsons(x@x, x@y, x@start_end_values)
+            }
+            print(value)
+          })
+
+print(tester)
 
 
 
