@@ -85,4 +85,37 @@ setMethod("initialize", "Trapezoid", function(.Object, ...) { #initilize method
   return(value)
 })
 
-#############
+############# Simpson class
+
+setClass(Class="Simpson",  #Sets S4 class of door
+         representation = representation(
+           x_values = "numeric", # three slots as specified in problem set
+           y_values = "numeric", 
+           estimate = "numeric"
+         ),
+         prototype = prototype(
+           x_values = c(), #default values are empty 
+           y_values = c(),
+           estimate = c()
+         )
+)
+
+setValidity("Simpson", function(object){ 
+  estimateLength = (length(object@estimate == 1))
+  
+  valuesLength= (length(object@x_values)== length(object@y_values))
+  
+  if(!estimateLength | !valuesLength){
+    return("Simpson not valid")
+  }
+  
+})
+
+new("Simpson", x_values= x, y_values= y, estimate= 33.6)
+
+setMethod("initialize", "Simpson", function(.Object, ...) { #initilize method 
+  value = callNextMethod()
+  validObject(value)
+  return(value)
+})
+
