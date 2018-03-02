@@ -119,3 +119,65 @@ setMethod("initialize", "Simpson", function(.Object, ...) { #initilize method
   return(value)
 })
 
+######## making input class
+
+setClass(Class="input",  #Sets S4 class of door
+         representation = representation(
+           x_values = "numeric", # three slots as specified in problem set
+           y_values = "numeric", 
+           start_end_values = "numeric",
+           test= "character"
+         ),
+         prototype = prototype(
+           x_values = c(), #default values are empty 
+           y_values = c(),
+           start_end_values = c(),
+           test= c()
+         )
+)
+
+setValidity("input", function(object){ 
+valuesLength= (length(object@x_values)== length(object@y_values))
+  
+  if(!valuesLength){
+    return("Simpson not valid")
+  }
+  
+})
+
+new("input", x_values= x, y_values= y,start_end_values= StartToEnd, test= "Trap")
+
+setMethod("initialize", "input", function(.Object, ...) { #initilize method 
+  value = callNextMethod()
+  validObject(value)
+  return(value)
+})
+
+
+
+####### Making function
+
+setGeneric("integrateIt", #sets generic function in S4
+           function(x,y,Starting_Ending_Values,type) {
+             standardGeneric("integrateIt")
+           } )
+
+setMethod("integrateIt", "input",
+          function(x,y,Starting_Ending_Values,type){
+  print("test")
+            
+          })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
