@@ -119,59 +119,26 @@ setMethod("initialize", "Simpson", function(.Object, ...) { #initilize method
   return(value)
 })
 
-######## making input class
 
-setClass(Class="input",  #Sets S4 class of door
-         representation = representation(
-           x = "numeric", # three slots as specified in problem set
-           y = "numeric", 
-           start_end_values = "numeric",
-           test= "character"
-         ),
-         prototype = prototype(
-           x = c(), #default values are empty 
-           y = c(),
-           start_end_values = c(),
-           test= c()
-         )
-)
-
-setValidity("input", function(object){ 
-  valuesLength= (length(object@x)== length(object@y))
-  
-  if(!valuesLength){
-    return("Simpson not valid")
-  }
-  
-})
-
-tester<- new("input", x= x.test, y= y.test,start_end_values= StartToEnd, test= "Trap")
-
-setMethod("initialize", "input", function(.Object, ...) { #initilize method 
-  value = callNextMethod()
-  validObject(value)
-  return(value)
-})
 
 
 
 ####### Making function
 
-setGeneric("integrateIt", #sets generic function in S4
-           function(object= "input") {
-             standardGeneric("integrateIt")
-           } )
+setGeneric("integrateIt", def = function(x,y,start_end_values,test){
+  standardGeneric("integrateIt")
+})
 
-setMethod("integrateIt", "input",
-          function(object){
-            if(object@test == "Trap"){
-              result= new("Trapezoid", x_values= object@x, y_values= object@y, estimate=
-                            trap(object@x, object@y, object@start_end_values)) 
+
+setMethod("integrateIt", definition = function(x,y,start_end_values, test ){
+            if(test == "Trap"){
+              result= new("Trapezoid", x_values= x, y_values= y, estimate=
+                            trap(x, y, start_end_values)) 
             }
             
-            if(object@test== "Simpson"){
-              result= new("Simpson", x_values= object@x, y_values= object@y, estimate=
-                            simpsons(object@x, object@y, object@start_end_values)) 
+            if(test== "Simpson"){
+              result= new("Simpson", x_values= x, y_values= y, estimate=
+                            simpsons(x, y, start_end_values)) 
             }
             
             
@@ -180,9 +147,9 @@ setMethod("integrateIt", "input",
 
 
 
-tester<- new("input", x= x.test, y= y.test, start_end_values= StartToEnd, test= "Trap")
 
-integrateIt(tester)
+
+integrateIt(x.test,y.test,StartToEnd,"Simpson")
 
 ########### Print Method 
 
