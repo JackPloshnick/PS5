@@ -1,0 +1,20 @@
+Package: integrateIt
+Title: Integrate using trap and simpson
+Version: 0.1
+Author: Jack Ploshnick
+Maintainer: Jack Ploshnick <j.ploshnick@wustl.edu>
+Description: Approximates integral
+Depends:
+    R (>= 3.0.0),
+    methods
+License: GPL (>= 2)
+Suggests:
+    devtools
+Collate:
+    'Integrate function.R'
+    'Print method.R'
+    'Simpson Class.R'
+    'Simpson function.R'
+    'Trap Class.R'
+    'Trap function.R'
+RoxygenNote: 6.0.1
