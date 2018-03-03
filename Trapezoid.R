@@ -24,7 +24,7 @@ trap<- function(x,y,StartToEnd){
   
 }
 
-trap(x.test,y.test,StartToEnd)
+yunk<- trap(x.test,y.test,StartToEnd)
 
 #################
 
@@ -154,22 +154,15 @@ integrateIt(x.test,y.test,StartToEnd,"Simpson")
 ########### Print Method 
 
 
-setMethod("print", "input",
+setMethod("print", "Trapezoid",
           function(x){
-            if(x@test=="Trap"){
-              value= trap(x@x, x@y, x@start_end_values)
-            }
-            
-            if(x@test=="Simpson"){
-              value=simpsons(x@x, x@y, x@start_end_values)
-            }
-            print(value)
-          })
+            print(x@estimate)})
+         
+print(yunk)
 
-print(tester)
-
-
-
+setMethod("print", "Simpson",
+          function(x){
+            print(x@estimate)})
 
 
 
