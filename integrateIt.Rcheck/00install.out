@@ -1,0 +1,12 @@
+* installing *source* package 'integrateIt' ...
+** R
+** preparing package for lazy loading
+in method for 'print' with signature '"Trapezoid"': no definition for class "Trapezoid"
+in method for 'print' with signature '"Simpson"': no definition for class "Simpson"
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+*** arch - i386
+*** arch - x64
+* DONE (integrateIt)

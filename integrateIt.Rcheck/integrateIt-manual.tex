@@ -1,0 +1,251 @@
+\nonstopmode{}
+\documentclass[a4paper]{book}
+\usepackage[times,inconsolata,hyper]{Rd}
+\usepackage{makeidx}
+\usepackage[utf8,latin1]{inputenc}
+% \usepackage{graphicx} % @USE GRAPHICX@
+\makeindex{}
+\begin{document}
+\chapter*{}
+\begin{center}
+{\textbf{\huge Package `integrateIt'}}
+\par\bigskip{\large \today}
+\end{center}
+\begin{description}
+\raggedright{}
+\item[Title]\AsIs{Integrate using trap and simpson}
+\item[Version]\AsIs{0.1}
+\item[Author]\AsIs{Jack Ploshnick}
+\item[Maintainer]\AsIs{Jack Ploshnick }\email{j.ploshnick@wustl.edu}\AsIs{}
+\item[Description]\AsIs{Approximates integral}
+\item[Depends]\AsIs{R (>= 3.0.0), methods}
+\item[License]\AsIs{GPL (>= 2)}
+\item[Suggests]\AsIs{devtools}
+\item[Collate]\AsIs{'Integrate function.R' 'Print method.R' 'Simpson Class.R'
+'Simpson function.R' 'Trap Class.R' 'Trap function.R'}
+\item[RoxygenNote]\AsIs{6.0.1}
+\end{description}
+\Rdcontents{\R{} topics documented:}
+\inputencoding{utf8}
+\HeaderA{integrateIt}{Integrates}{integrateIt}
+\aliasA{addSquares,ANY-method}{integrateIt}{addSquares,ANY.Rdash.method}
+%
+\begin{Description}\relax
+Integrates
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+integrateIt(x, y, start_end_values, test)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{x}] A numeric object
+
+\item[\code{y}] A numeric object with the same dimensionality as \code{x}.
+
+\item[\code{start\_end\_values}] A numeric
+
+\item[\code{test}] a character
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+An object of class Trap or Simpson
+\end{Value}
+%
+\begin{Note}\relax
+Please Work
+\end{Note}
+%
+\begin{Author}\relax
+Jack Ploshnick
+\end{Author}
+%
+\begin{SeeAlso}\relax
+\code{\LinkA{subtractSquares}{subtractSquares}}
+\end{SeeAlso}
+\inputencoding{utf8}
+\HeaderA{print,Trapezoid-method}{Prints}{print,Trapezoid.Rdash.method}
+\aliasA{addSquares,ANY-method}{print,Trapezoid-method}{addSquares,ANY.Rdash.method}
+%
+\begin{Description}\relax
+Prints
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+## S4 method for signature 'Trapezoid'
+print(x)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{x}] A trap or simpson
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+A numeric
+\end{Value}
+%
+\begin{Note}\relax
+Please Work
+\end{Note}
+%
+\begin{Author}\relax
+Jack Ploshnick
+\end{Author}
+%
+\begin{SeeAlso}\relax
+\code{\LinkA{subtractSquares}{subtractSquares}}
+\end{SeeAlso}
+\inputencoding{utf8}
+\HeaderA{Simpson-class}{Class of Simpson}{Simpson.Rdash.class}
+\aliasA{addSquares,ANY-method}{Simpson-class}{addSquares,ANY.Rdash.method}
+%
+\begin{Description}\relax
+Class of Simpson
+\end{Description}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{x}] A numeric object
+
+\item[\code{y}] A numeric object with the same dimensionality as \code{x}.
+
+\item[\code{estimate}] A numeric
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+creates Simpson Class
+\end{Value}
+%
+\begin{Note}\relax
+Please Work
+\end{Note}
+%
+\begin{Author}\relax
+Jack Ploshnick
+\end{Author}
+%
+\begin{SeeAlso}\relax
+\code{\LinkA{subtractSquares}{subtractSquares}}
+\end{SeeAlso}
+\inputencoding{utf8}
+\HeaderA{simpsons}{Does simpson approximation}{simpsons}
+\aliasA{addSquares,ANY-method}{simpsons}{addSquares,ANY.Rdash.method}
+%
+\begin{Description}\relax
+Does simpson approximation
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+simpsons(x, y, StartToEnd)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{x}] A numeric object
+
+\item[\code{y}] A numeric object with the same dimensionality as \code{x}.
+
+\item[\code{StartToEnd}] A numeric
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+An object of class Trap or Simpson
+\end{Value}
+%
+\begin{Note}\relax
+Please Work
+\end{Note}
+%
+\begin{Author}\relax
+Jack Ploshnick
+\end{Author}
+%
+\begin{SeeAlso}\relax
+\code{\LinkA{subtractSquares}{subtractSquares}}
+\end{SeeAlso}
+\inputencoding{utf8}
+\HeaderA{trap}{Does Trap approimation}{trap}
+\aliasA{addSquares,ANY-method}{trap}{addSquares,ANY.Rdash.method}
+%
+\begin{Description}\relax
+Does Trap approimation
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+trap(x, y, StartToEnd)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{x}] A numeric object
+
+\item[\code{y}] A numeric object with the same dimensionality as \code{x}.
+
+\item[\code{StartToEnd}] 
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+object of class trap
+\end{Value}
+%
+\begin{Note}\relax
+Please Work
+\end{Note}
+%
+\begin{Author}\relax
+Jack Ploshnick
+\end{Author}
+%
+\begin{SeeAlso}\relax
+\code{\LinkA{subtractSquares}{subtractSquares}}
+\end{SeeAlso}
+\inputencoding{utf8}
+\HeaderA{Trapezoid-class}{Creates Trap class}{Trapezoid.Rdash.class}
+\aliasA{addSquares,ANY-method}{Trapezoid-class}{addSquares,ANY.Rdash.method}
+%
+\begin{Description}\relax
+Creates Trap class
+\end{Description}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{x}] A numeric object
+
+\item[\code{y}] A numeric object with the same dimensionality as \code{x}.
+
+\item[\code{estimate}] a numeric
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+makes Trap class
+\end{Value}
+%
+\begin{Note}\relax
+Please Work
+\end{Note}
+%
+\begin{Author}\relax
+Jack Ploshnick
+\end{Author}
+%
+\begin{SeeAlso}\relax
+\code{\LinkA{subtractSquares}{subtractSquares}}
+\end{SeeAlso}
+\printindex{}
+\end{document}

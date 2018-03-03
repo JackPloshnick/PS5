@@ -1,0 +1,7 @@
+Simpson-class           Class of Simpson
+Trapezoid-class         Creates Trap class
+integrateIt             Integrates
+print,Trapezoid-method
+                        Prints
+simpsons                Does simpson approximation
+trap                    Does Trap approimation

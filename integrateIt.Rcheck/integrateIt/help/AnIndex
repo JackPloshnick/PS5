@@ -1,0 +1,12 @@
+addSquares,ANY-method	integratefunction
+addSquares,ANY-method	printfunction
+addSquares,ANY-method	simpsonclass
+addSquares,ANY-method	simpsonfunction
+addSquares,ANY-method	trapclass
+addSquares,ANY-method	trapfunction
+integrateIt	integratefunction
+print,Trapezoid-method	printfunction
+Simpson-class	simpsonclass
+simpsons	simpsonfunction
+trap	trapfunction
+Trapezoid-class	trapclass

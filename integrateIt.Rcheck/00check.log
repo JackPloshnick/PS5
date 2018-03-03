@@ -1,0 +1,122 @@
+* using log directory 'C:/Users/jackp/Documents/GitHub/PS5/integrateIt.Rcheck'
+* using R version 3.4.1 (2017-06-30)
+* using platform: x86_64-w64-mingw32 (64-bit)
+* using session charset: ISO8859-1
+* checking for file 'integrateIt/DESCRIPTION' ... OK
+* this is package 'integrateIt' version '0.1'
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... WARNING
+Found the following files with non-portable file names:
+  R/Integrate function.R
+  R/Print method.R
+  R/Simpson Class.R
+  R/Simpson function.R
+  R/Trap Class.R
+  R/Trap function.R
+These are not fully portable file names.
+See section 'Package structure' in the 'Writing R Extensions' manual.
+* checking whether package 'integrateIt' can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... NOTE
+Malformed Description field: should contain one or more complete sentences.
+Checking should be performed on sources prepared by 'R CMD build'.
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... NOTE
+Package in Depends field not imported from: 'methods'
+  These packages need to be imported from (in the NAMESPACE file)
+  for when this namespace is loaded but not attached.
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+simpsons: no visible global function definition for 'tail'
+simpsons: no visible global function definition for 'head'
+trap: no visible global function definition for 'tail'
+initialize,Simpson: no visible global function definition for
+  'callNextMethod'
+initialize,Simpson: no visible global function definition for
+  'validObject'
+initialize,Trapezoid: no visible global function definition for
+  'callNextMethod'
+initialize,Trapezoid: no visible global function definition for
+  'validObject'
+integrateIt,ANY: no visible global function definition for 'new'
+Undefined global functions or variables:
+  callNextMethod head new tail validObject
+Consider adding
+  importFrom("methods", "callNextMethod", "new", "validObject")
+  importFrom("utils", "head", "tail")
+to your NAMESPACE file (and ensure that your DESCRIPTION Imports field
+contains 'methods').
+* checking Rd files ... NOTE
+prepare_Rd: integratefunction.Rd:28-30: Dropping empty section \examples
+prepare_Rd: printfunction.Rd:23-25: Dropping empty section \examples
+prepare_Rd: simpsonclass.Rd:24-26: Dropping empty section \examples
+prepare_Rd: simpsonfunction.Rd:26-28: Dropping empty section \examples
+prepare_Rd: trapclass.Rd:24-26: Dropping empty section \examples
+prepare_Rd: trapfunction.Rd:26-28: Dropping empty section \examples
+* checking Rd metadata ... WARNING
+Rd files with duplicated alias 'addSquares,ANY-method':
+  'integratefunction.Rd' 'printfunction.Rd' 'simpsonclass.Rd'
+  'simpsonfunction.Rd' 'trapclass.Rd' 'trapfunction.Rd'
+* checking Rd cross-references ... WARNING
+Missing link or links in documentation object 'integratefunction.Rd':
+  'subtractSquares'
+
+Missing link or links in documentation object 'printfunction.Rd':
+  'subtractSquares'
+
+Missing link or links in documentation object 'simpsonclass.Rd':
+  'subtractSquares'
+
+Missing link or links in documentation object 'simpsonfunction.Rd':
+  'subtractSquares'
+
+Missing link or links in documentation object 'trapclass.Rd':
+  'subtractSquares'
+
+Missing link or links in documentation object 'trapfunction.Rd':
+  'subtractSquares'
+
+See section 'Cross-references' in the 'Writing R Extensions' manual.
+
+* checking for missing documentation entries ... WARNING
+Undocumented S4 methods:
+  generic 'integrateIt' and siglist 'ANY'
+  generic 'print' and siglist 'Simpson'
+All user-level objects in a package (including S4 classes and methods)
+should have documentation entries.
+See chapter 'Writing R documentation files' in the 'Writing R
+Extensions' manual.
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... WARNING
+Argument items with no description in Rd object 'trap':
+  'StartToEnd'
+
+* checking for unstated dependencies in examples ... OK
+* checking examples ... NONE
+* checking PDF version of manual ... WARNING
+LaTeX errors when creating PDF version.
+This typically indicates Rd problems.
+* checking PDF version of manual without hyperrefs or index ... ERROR
+Re-running with no redirection of stdout/stderr.
+* DONE
+Status: 1 ERROR, 6 WARNINGs, 4 NOTEs
