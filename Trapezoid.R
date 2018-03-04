@@ -3,53 +3,58 @@
 #equations is
 #  y= x^2
 
-x.test<- c(1,2,3,4,5)
-y.test<- c(1,4,9,16,25)
+x.test<- c(1:10)
+y.test<- c(11:20)
 
-StartToEnd<- c(1:5)
+x<- c(1:10)
+y<- c(11:20)
+
+StartToEnd<- c(2:9)
 
 trap<- function(x,y,StartToEnd){
   a= x[StartToEnd[1]]
   b= x[tail(StartToEnd, n=1)]
-  n= as.numeric(length(StartToEnd))
+  n= as.numeric(length(StartToEnd)-1)
   h=((b-a)/n)
   
-  first_value= y[1]
-  last_vlaue= tail(y, n=1)
-  middle_vlaues= 2* y[2:(length(x)-1)]
+  first_value= y[head(StartToEnd, n=1)]
+  last_vlaue= y[tail(StartToEnd, n=1)]
+  middle_vlaues= 2* y[ (head(StartToEnd, n=1)+1):(tail(StartToEnd, n=1)-1)]
   
-  answer= (h/2) * sum(first_value, last_vlaue, middle_vlaues)
+  answer= (h/2) * (first_value + last_vlaue + sum(middle_vlaues))
   
   return(answer)
   
 }
 
-yunk<- trap(x.test,y.test,StartToEnd)
+trap(x,y,StartToEnd)
 
 #################
+
+StartToEnd<- c(1:9)
 
 simpsons <- function(x,y,StartToEnd){
   a= x[StartToEnd[1]]
   b= x[tail(StartToEnd, n=1)]
-  n= as.numeric(length(StartToEnd))
+  n= as.numeric(length(StartToEnd)-1)
   h=((b-a)/n)
   
-  first_value= y[1]
-  last_vlaue= tail(y, n=1)
-  second_to_last= 4* head(tail(y, n=2), n=1)
-  middle_vlaues= y[2:(length(x)-2)]
+  first_value= y[head(StartToEnd, n=1)]
+  last_vlaue= y[tail(StartToEnd, n=1)]
+  second_to_last= 4* y[(tail(StartToEnd, n=1)-1)]
+  middle_vlaues= y[(head(StartToEnd, n=1)+1):(tail(StartToEnd, n=1)-2)]
   
   odd_middles= 4*middle_vlaues[seq(1,length(middle_vlaues),2)]
   
   even_middles= 2*middle_vlaues[seq(0,length(middle_vlaues),2)]
 
   
-  answer= (h/3)* sum(first_value, odd_middles, even_middles,second_to_last, last_vlaue)
+  answer= (h/3)* (first_value + sum(odd_middles) + sum(even_middles) + second_to_last + last_vlaue)
   
   return(answer)
 }
 
-simpsons(x.test,y.test,StartToEnd)
+simpsons(x,y,StartToEnd)
 
 ############# Making Classes
 
@@ -111,7 +116,7 @@ setValidity("Simpson", function(object){
   
 })
 
-new("Simpson", x_values= x.test, y_values= y.test, estimate= 33.6)
+yunk<-new("Simpson", x_values= x.test, y_values= y.test, estimate= 33.6)
 
 setMethod("initialize", "Simpson", function(.Object, ...) { #initilize method 
   value = callNextMethod()

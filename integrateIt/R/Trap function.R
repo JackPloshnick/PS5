@@ -20,14 +20,14 @@
 trap<- function(x,y,StartToEnd){
   a= x[StartToEnd[1]]
   b= x[tail(StartToEnd, n=1)]
-  n= as.numeric(length(StartToEnd))
+  n= as.numeric(length(StartToEnd)-1)
   h=((b-a)/n)
   
-  first_value= y[1]
-  last_vlaue= tail(y, n=1)
-  middle_vlaues= 2* y[2:(length(x)-1)]
+  first_value= y[head(StartToEnd, n=1)]
+  last_vlaue= y[tail(StartToEnd, n=1)]
+  middle_vlaues= 2* y[ (head(StartToEnd, n=1)+1):(tail(StartToEnd, n=1)-1)]
   
-  answer= (h/2) * sum(first_value, last_vlaue, middle_vlaues)
+  answer= (h/2) * (first_value + last_vlaue + sum(middle_vlaues))
   
   return(answer)
   

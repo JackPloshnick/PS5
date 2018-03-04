@@ -19,20 +19,20 @@
 simpsons <- function(x,y,StartToEnd){
   a= x[StartToEnd[1]]
   b= x[tail(StartToEnd, n=1)]
-  n= as.numeric(length(StartToEnd))
+  n= as.numeric(length(StartToEnd)-1)
   h=((b-a)/n)
   
-  first_value= y[1]
-  last_vlaue= tail(y, n=1)
-  second_to_last= 4* head(tail(y, n=2), n=1)
-  middle_vlaues= y[2:(length(x)-2)]
+  first_value= y[head(StartToEnd, n=1)]
+  last_vlaue= y[tail(StartToEnd, n=1)]
+  second_to_last= 4* y[(tail(StartToEnd, n=1)-1)]
+  middle_vlaues= y[(head(StartToEnd, n=1)+1):(tail(StartToEnd, n=1)-2)]
   
   odd_middles= 4*middle_vlaues[seq(1,length(middle_vlaues),2)]
   
   even_middles= 2*middle_vlaues[seq(0,length(middle_vlaues),2)]
   
   
-  answer= (h/3)* sum(first_value, odd_middles, even_middles,second_to_last, last_vlaue)
+  answer= (h/3)* (first_value + sum(odd_middles) + sum(even_middles) + second_to_last + last_vlaue)
   
   return(answer)
 }

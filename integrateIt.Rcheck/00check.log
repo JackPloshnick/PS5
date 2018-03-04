@@ -49,6 +49,7 @@ Package in Depends field not imported from: 'methods'
 simpsons: no visible global function definition for 'tail'
 simpsons: no visible global function definition for 'head'
 trap: no visible global function definition for 'tail'
+trap: no visible global function definition for 'head'
 initialize,Simpson: no visible global function definition for
   'callNextMethod'
 initialize,Simpson: no visible global function definition for
