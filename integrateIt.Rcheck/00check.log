@@ -9,7 +9,11 @@
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
-* checking for hidden files and directories ... OK
+* checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  R/.Rhistory
+These were most likely included in error. See section 'Package
+structure' in the 'Writing R Extensions' manual.
 * checking for portable file names ... WARNING
 Found the following files with non-portable file names:
   R/Integrate function.R
@@ -120,4 +124,4 @@ This typically indicates Rd problems.
 * checking PDF version of manual without hyperrefs or index ... ERROR
 Re-running with no redirection of stdout/stderr.
 * DONE
-Status: 1 ERROR, 6 WARNINGs, 4 NOTEs
+Status: 1 ERROR, 6 WARNINGs, 5 NOTEs

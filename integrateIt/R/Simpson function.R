@@ -34,5 +34,10 @@ simpsons <- function(x,y,StartToEnd){
   
   answer= (h/3)* (first_value + sum(odd_middles) + sum(even_middles) + second_to_last + last_vlaue)
   
-  return(answer)
+  if(length(x)!= length(y)){
+    stop("lengths are not equal")
+  }
+  
+  else{
+    return(answer)}
 }

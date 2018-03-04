@@ -3,10 +3,10 @@
 #equations is
 #  y= x^2
 
-x.test<- c(1:10)
+x.test<- c(1:9)
 y.test<- c(11:20)
 
-x<- c(1:10)
+x<- c(1:5)
 y<- c(11:20)
 
 StartToEnd<- c(2:9)
@@ -23,7 +23,12 @@ trap<- function(x,y,StartToEnd){
   
   answer= (h/2) * (first_value + last_vlaue + sum(middle_vlaues))
   
-  return(answer)
+  if(length(x)!= length(y)){
+    return("lengths are not equal")
+  }
+  
+  else{
+    return(answer)}
   
 }
 
@@ -51,7 +56,12 @@ simpsons <- function(x,y,StartToEnd){
   
   answer= (h/3)* (first_value + sum(odd_middles) + sum(even_middles) + second_to_last + last_vlaue)
   
-  return(answer)
+  if(length(x)!= length(y)){
+    return("lengths are not equal")
+  }
+  
+  else{
+    return(answer)}
 }
 
 simpsons(x,y,StartToEnd)

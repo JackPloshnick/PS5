@@ -29,6 +29,13 @@ trap<- function(x,y,StartToEnd){
   
   answer= (h/2) * (first_value + last_vlaue + sum(middle_vlaues))
   
-  return(answer)
+  if(length(x)!= length(y)){
+    stop("lengths are not equal")
+  }
+  
+  else{
+    return(answer)}
   
 }
+
+

@@ -26,10 +26,11 @@ load_all(current.code)
 document(current.code)
 check(current.code)
 
+?integrateIt
 
 ## Let's look at a function
 x.test<- c(1,2,3,4,5)
-y.test<- c(1,4,9,16,25)
+y.test<- c(1,4,9,16)
 
 StartToEnd<- c(1:5)
 

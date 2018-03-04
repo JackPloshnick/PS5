@@ -10,4 +10,4 @@ Suggests: devtools
 Collate: 'Integrate function.R' 'Print method.R' 'Simpson Class.R'
         'Simpson function.R' 'Trap Class.R' 'Trap function.R'
 RoxygenNote: 6.0.1
-Built: R 3.4.1; ; 2018-03-04 18:42:32 UTC; windows
+Built: R 3.4.1; ; 2018-03-04 19:10:36 UTC; windows
