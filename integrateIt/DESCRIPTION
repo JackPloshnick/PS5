@@ -11,10 +11,10 @@ License: GPL (>= 2)
 Suggests:
     devtools
 Collate:
+    'Trap Class.R'
+    'Simpson Class.R'
     'Integrate function.R'
     'Print method.R'
-    'Simpson Class.R'
     'Simpson function.R'
-    'Trap Class.R'
     'Trap function.R'
 RoxygenNote: 6.0.1
