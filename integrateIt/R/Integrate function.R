@@ -17,19 +17,19 @@
 #' @rdname integratefunction
 #' @aliases addSquares,ANY-method
 #' @export
-setGeneric("integrateIt", def = function(x,y,start_end_values,test){
+setGeneric("integrateIt", def = function(x,y,start_end_values,test){ #integrateIt function Generic
   standardGeneric("integrateIt")
 })
 
 
 setMethod("integrateIt", definition = function(x,y,start_end_values, test ){
-  if(test == "Trap"){
-    result= new("Trapezoid", x_values= x, y_values= y, estimate=
+  if(test == "Trap"){ #if Trap
+    result= new("Trapezoid", x_values= x, y_values= y, estimate= #creates a new class of trapezoid
                   trap(x, y, start_end_values)) 
   }
   
   if(test== "Simpson"){
-    result= new("Simpson", x_values= x, y_values= y, estimate=
+    result= new("Simpson", x_values= x, y_values= y, estimate= # if Simpson, creates a new class of simpson 
                   simpsons(x, y, start_end_values)) 
   }
   

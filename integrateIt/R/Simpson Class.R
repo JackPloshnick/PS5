@@ -17,7 +17,7 @@
 #' @aliases addSquares,ANY-method
 #' @export
 
-setClass(Class="Simpson",  #Sets S4 class of door
+setClass(Class="Simpson",  #Sets S4 class of Simpson
          representation = representation(
            x_values = "numeric", # three slots as specified in problem set
            y_values = "numeric", 
@@ -31,11 +31,11 @@ setClass(Class="Simpson",  #Sets S4 class of door
 )
 
 setValidity("Simpson", function(object){ 
-  estimateLength = (length(object@estimate == 1))
+  estimateLength = (length(object@estimate == 1)) #ensures only one value in estimate 
   
-  valuesLength= (length(object@x_values)== length(object@y_values))
+  valuesLength= (length(object@x_values)== length(object@y_values)) #ensures length of x and y are the same 
   
-  if(!estimateLength | !valuesLength){
+  if(!estimateLength | !valuesLength){ #if either is not true, return error 
     return("Simpson not valid")
   }
   

@@ -15,7 +15,7 @@
 #' @aliases addSquares,ANY-method
 #' @export
 
-setMethod("print", "Trapezoid",
+setMethod("print", "Trapezoid", #very simple print function. uses x as input value as specidied in help file 
           function(x){
             print(x@estimate)})
 

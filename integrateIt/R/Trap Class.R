@@ -19,7 +19,7 @@
 
 
 
-setClass(Class="Trapezoid",  #Sets S4 class of door
+setClass(Class="Trapezoid",  #Sets S4 class of Trapezoid 
          representation = representation(
            x_values = "numeric", # three slots as specified in problem set
            y_values = "numeric", 
@@ -33,9 +33,9 @@ setClass(Class="Trapezoid",  #Sets S4 class of door
 )
 
 setValidity("Trapezoid", function(object){ 
-  estimateLength = (length(object@estimate == 1))
+  estimateLength = (length(object@estimate == 1)) #ensures length of 1 for estimate 
   
-  valuesLength= (length(object@x_values)== length(object@y_values))
+  valuesLength= (length(object@x_values)== length(object@y_values))# ensures lengths are equal 
   
   if(!estimateLength | !valuesLength){
     return("Trapezoid not valid")
