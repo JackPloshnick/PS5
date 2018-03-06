@@ -30,7 +30,7 @@ check(current.code)
 
 ## Let's look at a function
 x.test<- c(1,2,3,4,5)
-y.test<- c(1,4,9,16)
+y.test<- c(1,4,9,16,25)
 
 StartToEnd<- c(1:5)
 
